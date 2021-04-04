@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+
+  --transparent-white: hsla(0, 0%, 100%, 0.75); /* (paragraphs) */
+  --very-light-gray: hsl(0, 0%, 95%); /*(background, headings, buttons)*/
+}
+
+body {
+  background-color: var(--very-light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.cards-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  padding: 2rem;
+}
+
+.sedans-card {
+  background-color: var(--bright-orange);
+}
+
+.suvs-card {
+  background-color: var(--dark-cyan);
+}
+
+.luxury-card {
+  background-color: var(--very-dark-cyan);
+}
+
+.card-title {
+  font-family: "Big Shoulders Display", cursive;
+  text-transform: uppercase;
+  color: var(--very-light-gray);
+  font-size: 1.7rem;
+  margin: 1.5rem 0;
+}
+
+.card-text {
+  color: var(--transparent-white);
+  font-family: "Lexend Deca", sans-serif;
+  line-height: 25px;
+  font-size: 0.9rem;
+  margin-bottom: 2.5rem;
+}
+
+.card-btn {
+  border: none;
+  font-family: "Lexend Deca", sans-serif;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  border: solid 2px transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.sedans-card .card-btn {
+  color: var(--bright-orange);
+}
+
+.suvs-card .card-btn {
+  color: var(--dark-cyan);
+}
+
+.luxury-card .card-btn {
+  color: var(--very-dark-cyan);
+}
+
+.card-btn:hover {
+  background: none;
+  color: var(--very-light-gray);
+  border: solid 2px var(--very-light-gray);
+}
+
+.attribution {
+  font-size: 0.9rem;
+  text-align: center;
+  font-family: "Lexend Deca", sans-serif;
+  margin-top: 1rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 650px) {
+  body {
+    padding: 1rem;
+  }
+  .cards-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+}
